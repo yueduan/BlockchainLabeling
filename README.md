@@ -13,22 +13,31 @@ Steps:
 1. maintain a full node
 
 	a. download geth from https://github.com/etclabscore/go-ethereum
+
 	b. build and start it with the option '--rpc'. This will enable the HTTP-RPC server at http://localhost:8545 for web3js.
+
 	c. let it sync for a while (take hours)
+
 
 
 2. web3js query for blockchain data
 
 	a. install web3js https://github.com/ethereum/web3.js/
+
 	b. execute queryBlockChain.js in the src directory
+
 	c. store the results somewhere
+
 
 
 3. graph generation
 
 	a. modify the input and output file paths at the beginning of preprocessing.py in src directory
+
 	b. execute the python code
+
 	c. transtion information and graph in edgelist format should be generated
+
 
 
 4. run LSTM Autoencoder to generate node features
@@ -36,7 +45,9 @@ Steps:
 	a. excute lstmAutoencoder.py for node feature generation
 
 
+
 5. graph representation learning
 
 	a. two inputs: graph (edgelist) and node feature
+
 	b. run ANRL (https://github.com/cszhangzhen/ANRL) with the two inputs 
