@@ -42,7 +42,7 @@ Steps:
 
 4. run LSTM Autoencoder to generate node features
 
-	a. excute lstmAutoencoder.py for node feature generation
+	a. excute lstmAutoencoder.py for node feature generation (I only implement a simple LSTM autoencoder. Haven't been able to dump the embeddings as node features yet)
 
 
 
