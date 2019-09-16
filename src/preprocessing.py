@@ -2,6 +2,7 @@ import os
 
 tx_file = "/home/yueduan/yueduan/txs_7179343_7281000"
 graph_file = "/home/yueduan/yueduan/graph.edgelist"
+node_index_mapping_file = "/home/yueduan/yueduan/node_idx_mapping"
 
 feature_file = "/home/yueduan/yueduan/feature"
 
@@ -32,16 +33,23 @@ def returnTxStr(tx):
 
 
 def generateGraphEdgelist(alltxs):
+    curr_idx = 0
     with open(graph_file, 'w') as gf:
         for txhash in alltxs:
             tx = alltxs[txhash]
 
             if tx[0] not in addressToIndex:
-                addressToIndex[tx[0]] = len(addressToIndex)
+                addressToIndex[tx[0]] = curr_idx
+                curr_idx += 1
             if tx[1] not in addressToIndex:
-                addressToIndex[tx[1]] = len(addressToIndex)
+                addressToIndex[tx[1]] = curr_idx
+                curr_idx += 1
 
             gf.write(str(addressToIndex[tx[0]]) + " " + str(addressToIndex[tx[1]]) + "\n")
+
+    with open(node_index_mapping_file, 'w') as nimf:
+        for addr in addressToIndex:
+            nimf.write(str(addressToIndex[addr]) + ":" + addr + "\n")
 
 
 def generateFeatures(alltxs):
