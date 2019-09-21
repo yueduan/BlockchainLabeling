@@ -51,3 +51,15 @@ Steps:
 	a. two inputs: graph (edgelist) and node feature
 
 	b. run ANRL (https://github.com/cszhangzhen/ANRL) with the two inputs 
+
+
+
+TWO ATTACK CASES:
+
+1. Double spend attacks (51% attack)
+
+	Please see the uploaded slides: double-spend-attack
+
+2.Fomo3D game attacks
+	 
+	Please see the two PDF reports: Fomo3D.pdf and lastWinner.pdf
